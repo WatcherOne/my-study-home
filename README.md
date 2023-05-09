@@ -36,3 +36,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+~ Todo
+1. 去掉 ts 语法 再用
+2. 加入 sass [https://www.nextjs.cn/docs/basic-features/built-in-css-support]
+3. 加入 连接数据库
+4. 数据库简单设计
+
+
+1. 做一个资源库系统（设计资源位置）
+2. 设计数据库（排版表+文件夹拖拽等+文件下载上传）
+3. 文件可不可以放在服务器另外的数据库中
