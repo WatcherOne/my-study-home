@@ -5,3 +5,6 @@ export const DATABASE = {
     password: '123456',
     database: 'chat'
 }
+
+export const jwtSecretKey = 'c^_^h' // 设置token加密解密的密钥
+export const EXPIRESIN = '10h'      // 设置token有效期
