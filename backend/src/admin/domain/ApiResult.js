@@ -6,13 +6,13 @@
 *************************************************************/
 class ApiResult {
     constructor(data) {
-        this.status = 200
+        this.code = 200
         this.data = data
         this.msg = '请求成功'
     }
 
-    setStatus(status) {
-        this.status = status
+    setStatus(code) {
+        this.code = code
         return this
     }
 
@@ -27,19 +27,19 @@ class ApiResult {
     }
 
     set401() {
-        this.status = 401
+        this.code = 401
         this.msg = 'token已过期'
         return this
     }
 
     set404() {
-        this.status = 404
+        this.code = 404
         this.msg = '无效请求'
         return this
     }
 
     set500(msg) {
-        this.status = 500
+        this.code = 500
         this.msg = msg
         return this
     }

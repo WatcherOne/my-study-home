@@ -4,8 +4,8 @@
  * CreateTime: 2023-05-11 17:33:20
  * Description: checkIsLogin
 *************************************************************/
-import { verifyToken } from '../../utils/token'
-import { WHITE_LIST } from '../../router/whitelist'
+import { verifyToken } from '../../utils/token.js'
+import { WHITE_LIST } from '../../router/whitelist.js'
 
 export const checkIsLogin = async (req, res, next) => {
     const { baseUrl } = req

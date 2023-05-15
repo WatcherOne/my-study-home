@@ -4,7 +4,7 @@
  * CreateTime: 2023-05-11 17:23:34
  * Description: token加密与解密
 *************************************************************/
-import { jwtSecretKey, EXPIRESIN } from '../config'
+import { jwtSecretKey, EXPIRESIN } from '../config.js'
 import jwt from 'jsonwebtoken'
 import { promisify } from 'util'
 

@@ -1,9 +1,9 @@
 export const DATABASE = {
     host: 'localhost',
     port: 3306,
-    user: 'root',
-    password: '123456',
-    database: 'chat'
+    username: 'root',
+    password: '12345678',
+    database: 'book_house'
 }
 
 export const jwtSecretKey = 'c^_^h' // 设置token加密解密的密钥
