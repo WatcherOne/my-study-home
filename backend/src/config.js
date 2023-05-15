@@ -8,3 +8,4 @@ export const DATABASE = {
 
 export const jwtSecretKey = 'c^_^h' // 设置token加密解密的密钥
 export const EXPIRESIN = '10h'      // 设置token有效期
+export const PASSWORD_SECRET = 'bookhousetestpassordsecret' // 设置密码加密密钥

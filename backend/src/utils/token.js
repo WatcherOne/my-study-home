@@ -5,7 +5,7 @@
  * Description: token加密与解密
 *************************************************************/
 import { jwtSecretKey, EXPIRESIN } from '../config.js'
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'  // token加密插件
 import { promisify } from 'util'
 
 // 通过 promisify 方法将 回调函数转换成支持 promise 的形式

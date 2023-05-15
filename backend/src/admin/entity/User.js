@@ -23,6 +23,13 @@ export const User = sequelize.define('user', {
     password: {
         type: Sequelize.STRING,
         allowNull: false
+        // validate: {
+        //     isNotEmpty(value) {
+        //         if (!value) {
+        //             throw new Error('密码不可为空')
+        //         }
+        //     }
+        // }
     },
     nickName: {
         type: Sequelize.STRING,
