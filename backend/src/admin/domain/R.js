@@ -6,6 +6,7 @@
 *************************************************************/
 import ApiResult from './ApiResult.js'
 
+// Todo: 删除ApiResult
 class R {
     constructor() {
         ApiResult.success()

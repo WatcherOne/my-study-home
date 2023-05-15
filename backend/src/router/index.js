@@ -5,13 +5,12 @@
  * Description: API路由配置
 *************************************************************/
 import express from 'express'
-import { Register } from '../admin/service/register.js'
+import { Login } from '../admin/service/Login.js'
+import { Register } from '../admin/service/Register.js'
 
 const router = express.Router()
 
-router.use('/login', async (req, res) => {
-    res.send('login')
-})
+router.use('/login', Login)
 router.use('/register', Register)
 
 export default router

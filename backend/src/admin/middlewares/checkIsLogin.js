@@ -21,6 +21,7 @@ export const checkIsLogin = async (req, res, next) => {
         return res.json({ code: 401, msg: '未登录' })
     }
     try {
+        // 验证 token 即在 login 时保存在 redis 中去拿（token存在redis中）
         // 先验证 redis 中存入的 token 是否相同？
         await verifyToken(token)
         next()

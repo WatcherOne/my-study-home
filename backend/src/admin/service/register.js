@@ -2,7 +2,7 @@
  * Author: zhubo
  * Emails: <286154864@qq.com>
  * CreateTime: 2023-05-15 14:42:00
- * Description: 业务层逻辑
+ * Description: 业务层：注册逻辑
 *************************************************************/
 import R from '../domain/R.js'
 import { User } from '../entity/User.js'
