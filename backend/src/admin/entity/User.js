@@ -38,10 +38,11 @@ export const User = sequelize.define('user', {
     sex: {
         type: Sequelize.INTEGER,
         defaultValue: 0
+    },
+    language: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
     }
-}, {
-    createdAt: 'create_by',
-    updatedAt: 'update_by'
 })
 
  

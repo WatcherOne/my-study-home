@@ -12,12 +12,12 @@ import { promisify } from 'util'
 export const sign = promisify(jwt.sign)
 export const verify = promisify(jwt.verify)
 
-// 加密信息并返回 Token
+// 生成 Token
 export const generateToken = async (info, expiresIn = EXPIRESIN) => {
     return await sign(info, jwtSecretKey, { expiresIn })
 }
 
-// 验证 Token
-export const verifyToken = async (token) => {
+// 解析 Token
+export const analysisToken = async (token) => {
     return await verify(token, jwtSecretKey)
 }

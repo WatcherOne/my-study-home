@@ -1,0 +1,12 @@
+// 安装 module-alias 配置路径别名
+// 虽然在 package 中配置了（打包运行可以使用）
+// 但 IDE 并不认识（在手动写时会给出提示）, 需要如下配置
+
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": ["*"]
+        }
+    }
+}

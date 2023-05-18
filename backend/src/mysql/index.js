@@ -21,6 +21,8 @@ export const sequelize = new Sequelize(DATABASE.database, DATABASE.username, DAT
     },
     define: {
         timestamps: true,
+        createdAt: 'create_by',
+        updatedAt: 'update_by',
         charset: 'utf8mb4',
         // 停止执行自动复数, 即表名===模型名，而无需任何改变
         freezeTableName: true

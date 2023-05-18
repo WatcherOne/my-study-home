@@ -7,10 +7,12 @@
 import express from 'express'
 import { Login } from '../admin/service/Login.js'
 import { Register } from '../admin/service/Register.js'
+import { getDictType } from '../admin/service/Dict.js'
 
 const router = express.Router()
 
 router.use('/login', Login)
 router.use('/register', Register)
+router.use('/getDictType', getDictType)
 
 export default router

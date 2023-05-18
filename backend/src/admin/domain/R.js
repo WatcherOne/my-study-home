@@ -4,11 +4,12 @@
  * CreateTime: 2023-05-15 15:12:26
  * Description: 后端返回基础数据结构
 *************************************************************/
+import { Tips } from '../../tip/index.js'
+
 class R {
-    constructor(data) {
-        this.code = 200
+    constructor(code = 200, data = null) {
+        this.code = code
         this.data = data
-        this.msg = '请求成功'
     }
 
     setCode(code) {
@@ -27,12 +28,27 @@ class R {
     }
 }
 
-R.ok = (data) => {
-    return new R(data)
+// 还需要修改一下：调整msg尽量不传由 前台 next 控制
+R.ok = (req, options) => {
+    if (!options) {
+        return new R().setMsg(Tips(req, 'REQUEST_SUCCESS'))
+    }
+    if (typeof options === 'string') {
+        return new R().setMsg(Tips(req, options))
+    }
+    const { code, data, msg } = options || {}
+    return new R(code, data).setMsg(Tips(req, msg))
 }
 
-R.error = (data, msg = '请求失败') => {
-    return new R(data).setCode(500).setMsg(msg)
+R.error = (req, options) => {
+    if (!options) {
+        return new R(500, null, Tips(req, 'REQUEST_FAILED'))
+    }
+    if (typeof options === 'string') {
+        return new R(500).setMsg(Tips(req, options))
+    }
+    const { code, data, msg } = options || {}
+    return new R(code, data).setMsg(Tips(req, msg))
 }
 
 export default R

@@ -5,11 +5,11 @@
  * Description: redis
 *************************************************************/
 import redis from 'redis'
+import { REDIS } from '../config.js'
 
 // 创建连接 (默认连接：localhost:6379)
-const connect = redis.createClient(port, host)
+const RedisClient = redis.createClient()
 
-// 设置过期时间
-connect.expire('hello', 10)
+RedisClient.connect(REDIS.port, REDIS.host)
 
-export default connect
+export default RedisClient
