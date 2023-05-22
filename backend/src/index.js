@@ -32,8 +32,18 @@ app.use(express.static(resolve(__dirname, 'public')))   // 配置静态资源
 app.use('*', checkIsLogin)  // 全局拦截验证 Token 配置
 app.use('*', setLanguage)   // 添加中间件设置当前系统语言
 app.use('/api', router)
+app.use('*', (req, res, next) => {
+    // Todo: 优化未知API的返回结果
+    console.log('not-found')
+    return res.json('Not_found')
+})
 // Todo：定时任务执行处理【node-schedule】
 // Todo: 监听 router 里面的所有前置错误
+
+// process.on('uncaughtException', (err, origin) => {
+//     fs.writeSync(process.stderr.fd, 'Caught')
+//     // console.log(process.stderr.fd, err, 'Caught')
+// })
 
 app.listen(port, () => {
     console.log(`listening on: http://localhost:${port}`)

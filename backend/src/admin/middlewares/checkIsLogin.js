@@ -26,6 +26,6 @@ export const checkIsLogin = async (req, res, next) => {
         req.token = token
         next()
     } catch (e) {
-        return res.json(e)
+        return res.json(R.error(req, { code: HTTP_CODE.UNAUTHORIZED, msg: e.message || 'UNKNOWN_ERROR' }))
     }
 }

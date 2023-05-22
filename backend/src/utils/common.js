@@ -9,3 +9,20 @@ export const getRequestToken = (req) => {
     const token = req.headers['authorization']
     return token ? token.split('Bearer ')[1] : null
 }
+
+export const handlePageParams = (req) => {
+    const { pageNum, pageSize } = req.query || {}
+    console.log(pageNum, pageSize)
+    if (!pageNum || !pageSize) {
+        return {}
+    } else {
+        return {
+            limit: parseInt(pageSize),
+            offset: (pageNum - 1) * pageSize
+        }
+    }
+}
+
+export const getValidateErrorList = (e) => {
+    return (e.errors || []).map(errorItem => errorItem.message).join(',')
+}

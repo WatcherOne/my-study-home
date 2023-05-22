@@ -5,7 +5,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "serve": "node src/index.js"
+        "serve": "node src/index.js",
+        "model": "node src/mysql/sequelize.model.js"
     },
     "keywords": [
         "node",
@@ -22,6 +23,7 @@
         "sequelize": "^6.31.1"
     },
     "devDependencies": {
-        "morgan": "^1.10.0"
+        "morgan": "^1.10.0",
+        "sequelize-auto": "^0.8.8"
     }
 }

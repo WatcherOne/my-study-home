@@ -6,6 +6,6 @@
 *************************************************************/
 
 export const WHITE_LIST = [
-    '/api/login',
-    '/api/register'
+    '/api/user/login',
+    '/api/user/register'
 ]
