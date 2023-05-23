@@ -57,7 +57,6 @@ export const deleteDictType = async (req, res) => {
         if (!ids || !ids.length) {
             return res.json(R.error(req, { code: HTTP_CODE.INVALID_REQUEST, msg: 'PARAMS_IS_EMPTY' }))
         }
-        console.log(ids)
         await DictType.destroy({
             where: {
                 id: {

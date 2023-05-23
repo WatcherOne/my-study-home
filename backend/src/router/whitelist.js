@@ -7,5 +7,10 @@
 
 export const WHITE_LIST = [
     '/api/user/login',
-    '/api/user/register'
+    '/api/user/register',
+    '/api/dict/getDictAll',
+    '/api/book/list',
+    // 先写死后面改
+    '/api/book/detail/2',
+    '/api/book/detail/1'
 ]

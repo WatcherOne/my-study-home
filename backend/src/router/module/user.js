@@ -5,8 +5,8 @@ import { getUserInfo } from '../../admin/service/user.js'
 
 const router = express.Router()
 
-router.use('/register', Register)
-router.use('/login', Login)
-router.use('/getUserInfo', getUserInfo)
+router.post('/register', Register)
+router.post('/login', Login)
+router.get('/getUserInfo', getUserInfo)
 
 export default router

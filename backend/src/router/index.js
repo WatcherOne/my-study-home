@@ -7,10 +7,12 @@
 import express from 'express'
 import UserRouter from './module/user.js'
 import DictRouter from './module/dict.js'
+import BookRouter from './module/book.js'
 
 const router = express.Router()
 
 router.use('/user', UserRouter)
 router.use('/dict', DictRouter)
+router.use('/book', BookRouter)
 
 export default router
