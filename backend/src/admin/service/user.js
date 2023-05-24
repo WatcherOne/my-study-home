@@ -10,11 +10,10 @@ import { getValidateErrorList } from '../../utils/common.js'
 
 export const getUserInfo = async (req, res) => {
     try {
-        const { token } = req
-        if (!token) {
+        const userModel = await tokenService.getLoginUser(req.token)
+        if (!userModel) {
             return res.json(R.error(req, { code: HTTP_CODE.UNAUTHORIZED, msg: 'jwt expired' }))
         }
-        const userModel = await tokenService.getLoginUser(token)
         const { id } = userModel
         // 从数据库拿取最新用户信息
         const userInfo = await User.findOne({ where: { id } })

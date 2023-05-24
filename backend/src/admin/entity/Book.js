@@ -8,10 +8,22 @@ export default sequelize.define('book', {
         primaryKey: true,
         comment: "主键"
     },
-    name: {
+    title: {
         type: DataTypes.STRING(255),
         allowNull: false,
         comment: "书名"
+    },
+    subTitle: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+        comment: "副标题",
+        field: 'sub_title'
+    },
+    foreignTitle: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+        comment: "外文名",
+        field: 'foreign_title'
     },
     authorId: {
         type: DataTypes.INTEGER,
@@ -30,7 +42,7 @@ export default sequelize.define('book', {
         comment: "标签（关联ids）"
     },
     introduction: {
-        type: DataTypes.STRING(255),
+        type: DataTypes.TEXT,
         allowNull: true,
         comment: "简介"
     },

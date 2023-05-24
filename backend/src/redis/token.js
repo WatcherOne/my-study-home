@@ -14,11 +14,14 @@ const saveToken = (token, userInfo = {}) => {
 }
 
 const getRedisToken = async (token) => {
+    if (!token) {
+        return null
+    }
     try {
         const str = await RedisClient.get(`${REDIS_TOKEN_KEY}:${token}`)
-        return str ? JSON.parse(str) : {}
+        return str && JSON.parse(str)
     } catch {
-        return {}
+        return null
     }
 }
 

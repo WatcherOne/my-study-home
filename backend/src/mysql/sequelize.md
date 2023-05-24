@@ -135,3 +135,17 @@ sequelize-auto -h "数据库地址" -d "数据库名称" ...
 -useDefine         # 使用'sequel.define'而不是'init'
 -z, --typescript   # 将模型输出为 typescript 文件
 ```
+
+##### 事务
+
+> 可以理解为一个事务对应一组完整的业务，在这个事务中所作的一切操作要么全部成功，要么全部失败
+> 只要有一个操作没成功，整个事务都将回滚到事务开始前
+```
+const t = await Sequelize.transaction()  // 创建一个事务
+try {
+    ...
+    await t.commit()     // 提交事务
+} catch {
+    await t.rollback()   // 回滚事务
+}
+```

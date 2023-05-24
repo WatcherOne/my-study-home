@@ -12,5 +12,6 @@ export const WHITE_LIST = [
     '/api/book/list',
     // 先写死后面改
     '/api/book/detail/2',
-    '/api/book/detail/1'
+    '/api/book/detail/1',
+    '/api/book/myBookList'
 ]
