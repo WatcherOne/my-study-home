@@ -94,4 +94,3 @@ export async function getStaticPaths () {
 1. getServiceSideProps() // 服务器将在每次页面请求时调用此函数
 > 当你的某个页面需要预渲染频繁更新的数据时, 使用服务器渲染
 > 由于服务器端渲染会导致性能比“静态生成”慢，因此仅在绝对必要时才使用此功能
-
