@@ -7,10 +7,16 @@ node >= 16.8.0 [建议: 16.14.0]
 
 > contruction
 ```
-components     //  存在一些通用组件，不使当成路由处理时存放位置
-  |---icons    //  可以存在一些 svg 的图标组件（参考svg图标[https://heroicons.com/]）
+components       //  存在一些通用组件，不使当成路由处理时存放位置
+  |---icons      //  可以存在一些 svg 的图标组件（参考svg图标[https://heroicons.com/]）
   |
-public         //  公共静态文件，访问是 '/...' 直接斜杠就到文件夹下面找
+public           //  公共静态文件，访问是 '/...' 直接斜杠就到文件夹下面找
+  |              //  根目录 public 目录下放静态文件，Next.js 会自动处理 [] VS static
+  |
+pages            //  路由文件位置
+  |---_app.js    //  根组件，所有页面渲染经过这里（可以包装这个组件）
+  |---layout.js  //  通用布局组件
+  |
 ```
 
 - npm i
