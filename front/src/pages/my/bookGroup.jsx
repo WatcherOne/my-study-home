@@ -1,4 +1,6 @@
-export default function MyBookList ({ bookList = [] }) {
+import './bookGroup.css'
+
+export default function MyBookGroup ({ bookGroupList = [] }) {
 
     const showBooks = (list = []) => {
         return list.map((item, index) => {
@@ -13,11 +15,11 @@ export default function MyBookList ({ bookList = [] }) {
     }
 
     return (
-        <div>
-            <div>我的书单</div>
-            <div>
+        <div className='book-group-container'>
+            <div className='page-title'>我的书单</div>
+            <div className='book-group-box'>
                 {
-                    bookList.map(item => {
+                    bookGroupList.map(item => {
                         return (
                             <div key={item.id} className='book-group'>
                                 <div>{item.name}</div>
@@ -34,11 +36,11 @@ export default function MyBookList ({ bookList = [] }) {
 import { fetchGetData } from '@/api'
 
 export const getStaticProps = async () => {
-    const bookList = await fetchGetData('/book/myBookList')
+    const bookGroupList = await fetchGetData('/book/myBookList')
 
     return {
         props: {
-            bookList
+            bookGroupList
         }
     }
 }

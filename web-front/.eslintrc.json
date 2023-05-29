@@ -1,0 +1,4 @@
+{
+    // add 'next/babel' to reslove [Parsing error: Cannot find module 'next/babel']
+    "extends": ["next/babel", "next/core-web-vitals"]
+}

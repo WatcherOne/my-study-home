@@ -1,0 +1,16 @@
+.book-group-container .page-title {
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: lightblue;
+}
+
+.book-group-box {
+    display: flex;
+    align-items: center;
+}
+
+.book-group {
+    border: 1px solid #dedede;
+}
