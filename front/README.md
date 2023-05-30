@@ -12,12 +12,13 @@ static           //  静态文件服务. ./static/ 映射到 /static/
   |              //  根目录目录下 创建静态文件夹 static, Next.js 会自动处理
   |              //  代码可以通过/static/来引入相关的静态资源
   |
+public           //  公共静态文件，访问是 '/...' 直接斜杠就到文件夹下面找
+  |              //  public 和 static 都可以
+  |
 components       //  存在一些通用组件，不使当成路由处理时存放位置
   |---icons      //  可以存在一些 svg 的图标组件（参考svg图标[https://heroicons.com/]）
   |
-public           //  公共静态文件，访问是 '/...' 直接斜杠就到文件夹下面找
-  |              //   [] VS static
-  |
+
 pages            //  默认情况, Next将会把/pages下的所有文件匹配路由
   |---_app.js    //  根组件，所有页面渲染经过这里（可以包装这个组件）
   |---layout.js  //  通用布局组件
@@ -26,7 +27,7 @@ pages            //  默认情况, Next将会把/pages下的所有文件匹配�
 
 - npm i
 - npm run serve // 开发环境启动
-- npm run build // 打包项目
+- npm run build // 打包项目 (包含 next export: 生成静态部署文件资源)
 - npm run start // 启动服务端
 
 ##### 使用文档说明
@@ -89,6 +90,16 @@ export default ({ router }) => (
     // you can use router.push() replace
     // const router = useRouter()
 )
+```
+
+> 动态导入（取消服务器渲染-测试验证！）
+```
+import dynamic from 'next/dynamic'
+
+const comp1 = dynamic(() => import('./xxx/xxx'), {
+    ssr: false,
+    loading: () => <></>
+})
 ```
 
 ##### 常见问题

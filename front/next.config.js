@@ -33,6 +33,17 @@ const nextConfig = {
     staticPageGenerationTimeout: 90,
     // useFileSystemPublicRoutes: 禁止服务端文件路由
     // useFileSystemPublicRoutes: false
+    // 禁用图像优化, 图像优化 API 需要服务器根据请求按需优化图像
+    // 但不适用于 next export, 因为它不包含用于优化图像的服务器
+    images: {
+        unoptimized: true,
+    },
+    // exportPathMap: () => {
+    //     // 生成静态文件的配置
+    //     return {
+    //         '/': { page: '/' }
+    //     }
+    // }
 }
 
 module.exports = nextConfig
