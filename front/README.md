@@ -25,8 +25,9 @@ pages            //  默认情况, Next将会把/pages下的所有文件匹配�
 ```
 
 - npm i
-- npm run serve
-- npm run build
+- npm run serve // 开发环境启动
+- npm run build // 打包项目
+- npm run start // 启动服务端
 
 ##### 使用文档说明
 

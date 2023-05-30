@@ -8,7 +8,8 @@ export default function BookDetail ({ info }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-    const res = await fetchGetData(`/book/detail/${params.id}`)
+    // const res = await fetchGetData(`/book/detail/${params.id}`)
+    const res = {}
 
     return {
         props: {
@@ -17,10 +18,11 @@ export const getStaticProps = async ({ params }) => {
     }
 }
 
-import { fetchGetData } from '@/api'
+// import { fetchGetData } from '@/api'
 
 export const getStaticPaths = async () => {
-    const res = await fetchGetData('/book/list')
+    // const res = await fetchGetData('/book/list')
+    const res = {}
     const { rows = [] } = res || {}
 
     const paths = rows.map(item => ({ params: { id: item.id + '' } }))

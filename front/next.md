@@ -1,8 +1,8 @@
 ##### next使用说明
 
 - CSR：Client Side Rendering            # 客户端渲染(通常指浏览器)
-- SSR：Service Side Rendering           # 服务器渲染
-- SSG：Static Site Generation           # 静态网站生成
+- SSR：Service Side Rendering           # 服务器渲染【每次请求重新生成的】
+- SSG：Static Site Generation           # 静态网站生成【构建时生成的, html + json】
 - ISG：Incremental Site Rendering       # 增量式的网站渲染（revalidate:10）
 - DPR：Distributed Persistent Rendering # 分布式的持续渲染
 [参考文档](https://www.cnblogs.com/lhb25/p/16223782.html)

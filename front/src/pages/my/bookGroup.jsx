@@ -1,4 +1,4 @@
-import './bookGroup.css'
+// import './bookGroup.css'
 
 export default function MyBookGroup ({ bookGroupList = [] }) {
 
@@ -33,10 +33,11 @@ export default function MyBookGroup ({ bookGroupList = [] }) {
     )
 }
 
-import { fetchGetData } from '@/api'
+// import { fetchGetData } from '@/api'
 
 export const getStaticProps = async () => {
-    const bookGroupList = await fetchGetData('/book/myBookList')
+    // const bookGroupList = await fetchGetData('/book/myBookList')
+    const bookGroupList = []
 
     return {
         props: {

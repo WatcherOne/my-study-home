@@ -15,10 +15,11 @@ export default function MyBookList ({ dictList }) {
     )
 }
 
-import { getDictAll } from '@/api'
+// import { fetchGetData } from '@/api'
 
 export const getStaticProps = async () => {
-    const dictList = await getDictAll('/dict/getDictAll')
+    // const dictList = await fetchGetData('/dict/getDictAll')
+    const dictList = []
 
     return {
         props: {

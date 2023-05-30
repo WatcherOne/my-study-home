@@ -1,4 +1,4 @@
-import { API_URL } from '@/constants'
+import { API_URL } from '@/constants/config'
 
 export async function fetchGetData (url) {
     const res = await fetch(`${API_URL}${url}`, {
