@@ -1,13 +1,12 @@
+import Header from './header'
+import Footer from './footer'
+
 export default function Layout ({ children }) {
     return (
         <>
-            <header>
-                <h1>测试布局</h1>
-            </header>
+            <Header></Header>
             <main>{children}</main>
-            <footer>
-                <span>Copywrite 2023 - wacther</span>
-            </footer>
+            <Footer></Footer>
         </>
     )
 }

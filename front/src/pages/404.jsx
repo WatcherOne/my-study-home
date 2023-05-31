@@ -3,3 +3,7 @@ export default function NotFound () {
         <div>not found page</div>
     )
 }
+
+NotFound.getLayout = () => {
+    return <NotFound></NotFound>
+}
