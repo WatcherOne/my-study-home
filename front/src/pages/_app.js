@@ -1,35 +1,22 @@
 // 导入全局样式
 import '@/styles/globals.css'
+import Layout from '@/components/layout'
 
+// 输出性能指标
 export function reportWebVitals (metric) {
     console.log(metric)
 }
 
-// export function reportWebVitals(metric) {
-//     switch (metric.name) {
-//       case 'FCP':
-//         // handle FCP results
-//         break;
-//       case 'LCP':
-//         // handle LCP results
-//         break;
-//       case 'CLS':
-//         // handle CLS results
-//         break;
-//       case 'FID':
-//         // handle FID results
-//         break;
-//       case 'TTFB':
-//         // handle TTFB results
-//         break;
-//       case 'INP':
-//         // handle INP results (note: INP is still an experimental metric)
-//         break;
-//       default:
-//         break;
-//     }
-//   }
-
 export default function App({ Component, pageProps }) {
-    return <Component {...pageProps} />
+    // 组件内部自定义样式 - 否则默认使用布局组件
+    const getLayout = Component.getLayout
+    if (getLayout) {
+        return getLayout(<Component {...pageProps} />)
+    } else {
+        return (
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        )
+    }
 }
