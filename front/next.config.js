@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
 
 /**
  * next.config.js是一个 Node.js 模块
@@ -44,6 +45,9 @@ const nextConfig = {
     //         '/': { page: '/' }
     //     }
     // }
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'styles')]
+    }
 }
 
 module.exports = nextConfig

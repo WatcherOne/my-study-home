@@ -1,5 +1,6 @@
 // 导入全局样式
 import '@/styles/globals.css'
+import '@/styles/variables.module.scss'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Layout from '@/components/layout'
