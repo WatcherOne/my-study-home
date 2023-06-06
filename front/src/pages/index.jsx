@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import styles from '@/styles/index.module.scss'
+import { getMyBookList } from '@/db/service/Book'
 
-export const getStaticProps = async () => {
-    const result = await fetch('http://localhost:3000/api/booklist')
+export const getStaticProps = async (req, res) => {
+    const result = await getMyBookList(req, res)
     return {
         props: {
             name: '首页2'

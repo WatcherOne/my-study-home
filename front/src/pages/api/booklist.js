@@ -19,6 +19,5 @@ export async function fetchGetData (url) {
 
 export default async function handler (req, res) {
     const data = await getMyBookList(req, res)
-    console.log(2332, data)
-    return res.status(200).json({ list: [{ name: 's22' }] })
+    return res.status(200).json(data)
 }

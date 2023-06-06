@@ -82,9 +82,8 @@ export const getMyBookList = async (req, res) => {
                 }
             }]
         })
-        console.log(22, res)
-        return res.json(R.ok(req, { data, msg: 'REQUEST_SUCCESS' }))
+        return R.ok(req, { data, msg: 'REQUEST_SUCCESS' })
     } catch (e) {
-        return res.json(R.error(req, getValidateErrorList(e)))
+        return R.error(req, getValidateErrorList(e))
     }
 }
