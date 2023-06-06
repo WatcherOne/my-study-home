@@ -10,11 +10,19 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "crypto-js": "^4.1.1",
         "eslint": "8.41.0",
         "eslint-config-next": "^13.4.4",
+        "jsonwebtoken": "^9.0.0",
+        "mysql2": "^3.3.3",
         "next": "13.4.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
-        "sass": "^1.62.1"
+        "sass": "^1.62.1",
+        "sequelize": "^6.32.0"
+    },
+    "devDependencies": {
+        "morgan": "^1.10.0",
+        "sequelize-auto": "^0.8.8"
     }
 }

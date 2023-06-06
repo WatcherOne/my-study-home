@@ -67,7 +67,8 @@ export async function getStaticProps (context) {
 > 通过返回值生成 响应的html和json文件
 > 以下代码会生成3个静态页面【1-3】.html 和 3个json文件，生成的文件可以到 .next/server/pages/ 下查看
 > fallback 参数如下
-> 同上，在开发时（即 next dev）时，getStaticPaths 会在每次页面访问时被请求！！
+> 同上，在开发时（即 next dev）时，getStaticPaths 会在每次页面访问时被请求！！（便于我们修改代码重新运行）
+> 生产环境时，只会在build时运行
 ```
 export async function getStaticPaths () {
     // 从外部拿数据, 此处为mock数据
