@@ -34,13 +34,15 @@ export default function MyBookGroup ({ bookGroupList = [] }) {
 }
 
 // import { fetchGetData } from '@/api'
+import { getMyBookList } from '@/db/service/Book'
 
-export const getStaticProps = async () => {
-    // const bookGroupList = await fetchGetData('/book/myBookList')
+export const getStaticProps = async (req, res) => {
+    const result = await getMyBookList(req, res)
+    // const bookGroupList = 
     const bookGroupList = []
-
     return {
         props: {
+            name: '首页2',
             bookGroupList
         }
     }
