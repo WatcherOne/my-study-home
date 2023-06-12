@@ -13,22 +13,22 @@ import Author from '@/db/models/Author.js'
 // import tokenService from '../../redis/token.js'
 import { handlePageParams, getValidateErrorList } from '@/utils/common.js'
 
-// export const getBookPage = async (req, res) => {
-//     try {
-//         const { keywords } = req.query
-//         const searchParams = keywords ? {
-//             [Op.or]: [
-//                 { name: { [Op.like]: `%${keywords}%` } }
-//             ]
-//         } : {}
-//         const data = await Book.findAndCountAll(Object.assign({
-//             where: searchParams
-//         }, handlePageParams(req)))
-//         return res.json(R.ok(req, { data, msg: 'REQUEST_SUCCESS' }))
-//     } catch (e) {
-//         return res.json(R.error(req, getValidateErrorList(e)))
-//     }
-// }
+export const getBookPage = async (req, res) => {
+    try {
+        const { keywords } = req.query
+        const searchParams = keywords ? {
+            [Op.or]: [
+                { name: { [Op.like]: `%${keywords}%` } }
+            ]
+        } : {}
+        const data = await Book.findAndCountAll(Object.assign({
+            where: searchParams
+        }, handlePageParams(req)))
+        return R.ok(req, { data, msg: 'REQUEST_SUCCESS' })
+    } catch (e) {
+        return R.error(req, getValidateErrorList(e))
+    }
+}
 
 // export const getBookDetail = async (req, res) => {
 //     try {
