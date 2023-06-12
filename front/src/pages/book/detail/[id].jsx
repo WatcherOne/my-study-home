@@ -7,8 +7,15 @@ export default function BookDetail ({ info }) {
     )
 }
 
-export const getStaticProps = async ({ params }) => {
-    // const res = await fetchGetData(`/book/detail/${params.id}`)
+export const getStaticProps = async (req, res) => {
+    const result = await getBookPage(req, res)
+    console.log(result)
+    return {
+        props: {
+            list: []
+        },
+        revalidate: 12 * 60 * 60 * 1000
+    }
     const res = {}
 
     return {
