@@ -13,7 +13,7 @@ import Author from '@/db/models/Author.js'
 // import tokenService from '../../redis/token.js'
 import { handlePageParams, getValidateErrorList } from '@/utils/common.js'
 
-export const getBookPage = async (req, res) => {
+export const getBookPage = async (req) => {
     try {
         const { keywords } = req.query
         const searchParams = keywords ? {
@@ -26,6 +26,7 @@ export const getBookPage = async (req, res) => {
         }, handlePageParams(req)))
         return R.ok(req, { data, msg: 'REQUEST_SUCCESS' })
     } catch (e) {
+        console.log(e)
         return R.error(req, getValidateErrorList(e))
     }
 }

@@ -1,23 +1,7 @@
-import { API_URL } from '@/constants/config'
-import { getMyBookList } from '@/db/service/Book'
 
-export async function fetchGetData (url) {
-    const res = await fetch(`${API_URL}${url}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-
-    const json = await res.json()
-    if (json.errors) {
-        console.error(json.errors)
-        throw new Error('Failed to fetch API')
-    }
-    return json.data
-}
+import { getBookPage } from '@/db/service/Book'
 
 export default async function handler (req, res) {
-    const data = await getMyBookList(req, res)
-    return res.status(200).json(data)
+    const result = await getBookPage(req, res)
+    res.status(200).json(result)
 }
