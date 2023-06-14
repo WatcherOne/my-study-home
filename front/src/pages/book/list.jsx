@@ -1,18 +1,24 @@
 import Router from 'next/router'
 import Link from 'next/link'
 import { fetchGetData } from '@/pages/api/common'
+import styles from './list.module.css'
 
 export default function BookList (props) {
     const { list } = props
+    console.log(list)
 
     return (
-        <div className='book_list_container'>
+        <div className={styles.list_container}>
             {
                 list.map(item => {
                     return (
-                        <div className='book_description' key={item.id}>
-                            <div>《{item.title}》</div>
-                            <div>{item.introduction}</div>
+                        <div className={styles.list_box} key={item.id}>
+                            <div className={styles.cover}>
+                                <img src="" alt="" />
+                            </div>
+                            <div className={styles.title}>《{item.title}》</div>
+                            <div className={styles.author}>{item.authorId}</div>
+                            <div className={styles.list_intro}>{item.introduction}</div>
                         </div>
                     )
                 })

@@ -12,6 +12,8 @@
 
     --foreground-rgb: var(--black);  /* 前景色 */
     --background-rgb: var(--white);  /* 背景色 */
+
+    --border-color: #ebeef5;
 }
 
 /* 当系统为深色模式时采用应用该样式 */
