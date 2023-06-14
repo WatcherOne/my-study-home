@@ -16,6 +16,9 @@
     --primary-color: rgb(65, 194, 129);
     --secondary-color: rgb(92, 179, 207);
 
+    --text-color: #d5d5d5;
+    --container-ground-rgb: #545652;
+
     --border-color: #ebeef5;
 }
 

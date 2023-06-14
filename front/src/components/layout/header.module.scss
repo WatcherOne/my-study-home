@@ -3,9 +3,13 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
-    line-height: 40px;
-    background-color: rgb(124, 233, 188);
+    height: 30px;
+    line-height: 30px;
+    color: var(--text-color);
+    background-color: var(--container-ground-rgb);
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-size: 14px;
     .settings {
         display: flex;
         align-items: center;
