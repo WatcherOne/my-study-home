@@ -13,6 +13,9 @@
     --foreground-rgb: var(--black);  /* 前景色 */
     --background-rgb: var(--white);  /* 背景色 */
 
+    --primary-color: rgb(65, 194, 129);
+    --secondary-color: rgb(92, 179, 207);
+
     --border-color: #ebeef5;
 }
 

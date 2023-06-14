@@ -12,7 +12,6 @@ export const getRequestToken = (req) => {
 
 export const handlePageParams = (req) => {
     const { pageNum, pageSize } = req.query || {}
-    console.log(pageNum, pageSize)
     if (!pageNum || !pageSize) {
         return {}
     } else {

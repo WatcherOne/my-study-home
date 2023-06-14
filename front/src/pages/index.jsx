@@ -12,7 +12,6 @@ export const getStaticProps = async (req, res) => {
 }
 
 export default function Home(props) {
-    console.log(props)
     return (
         <section className={styles.container}>
             <div className="title">{props.name}</div>

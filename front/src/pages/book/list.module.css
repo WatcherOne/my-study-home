@@ -8,7 +8,7 @@
 
 .list_box {
     width: 300px;
-    height: 360px;
+    height: 400px;
     padding: 5px 10px;
     box-sizing: border-box;
     border: 1px solid var(--border-color);
@@ -21,10 +21,15 @@
     font-weight: bold;
 }
 
-.list_box .author {
+.list_box .author_info {
     font-size: 14px;
     color: #999;
     margin: 5px 0 5px 10px;
+}
+
+.list_box .author_info .author_name {
+    color: var(--primary-color);
+    margin-right: 5px;
 }
 
 .list_box .list_intro {
@@ -37,9 +42,14 @@
     font-size: 14px;
     color: #777;
     padding: 0 10px;
+    cursor: pointer;
+}
+
+.list_box .list_intro:hover {
+    text-decoration: underline;
 }
 
 .list_box .cover {
     width: 100%;
-    height: 63%;
+    height: 65%;
 }

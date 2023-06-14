@@ -5,7 +5,6 @@ import styles from './list.module.css'
 
 export default function BookList (props) {
     const { list } = props
-    console.log(list)
 
     return (
         <div className={styles.list_container}>
@@ -16,15 +15,16 @@ export default function BookList (props) {
                             <div className={styles.cover}>
                                 <img src="" alt="" />
                             </div>
-                            <div className={styles.title}>《{item.title}》</div>
-                            <div className={styles.author}>{item.authorId}</div>
-                            <div className={styles.list_intro}>{item.introduction}</div>
+                            <Link href={`/book/detail/${item.id}`} className={styles.title}>《{item.title}》</Link>
+                            <div className={styles.author_info}>
+                                <span className={styles.author_name}>{item.author.name}[{item.author.nation}]</span>
+                                <span>{item.publishTime}</span>
+                            </div>
+                            <div onClick={() => { Router.push(`/book/detail/${item.id}`) }} className={styles.list_intro}>{item.introduction}</div>
                         </div>
                     )
                 })
             }
-            {/* <Link href="/book/detail/1">详细</Link>
-            <a onClick={() => { Router.push('/book/detail/2') }}>详细</a> */}
         </div>
     )
 }

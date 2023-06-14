@@ -10,8 +10,16 @@ import Book from '@/db/models/Book.js'
 import BookGroup from '@/db/models/BookGroup.js'
 import BookGroupBook from '@/db/models/BookGroupBook.js'
 import Author from '@/db/models/Author.js'
+// import { DictTypeData } from '../models/Dict'
 // import tokenService from '../../redis/token.js'
 import { handlePageParams, getValidateErrorList } from '@/utils/common.js'
+
+
+Book.hasOne(Author, {
+    sourceKey: 'authorId',
+    as: 'author',
+    foreignKey: 'id'
+})
 
 export const getBookPage = async (req) => {
     try {
@@ -22,26 +30,35 @@ export const getBookPage = async (req) => {
             ]
         } : {}
         const data = await Book.findAndCountAll(Object.assign({
-            where: searchParams
+            where: searchParams,
+            include: [{
+                model: Author,
+                as: 'author',
+                required: true
+            }]
         }, handlePageParams(req)))
         return R.ok(req, { data, msg: 'REQUEST_SUCCESS' })
     } catch (e) {
-        console.log(e)
         return R.error(req, getValidateErrorList(e))
     }
 }
 
-// export const getBookDetail = async (req, res) => {
-//     try {
-//         const { id } = req.params
-//         const data = await Book.findOne({
-//             where: { id }
-//         })
-//         return res.json(R.ok(req, { data, msg: 'REQUEST_SUCCESS' }))
-//     } catch (e) {
-//         return res.json(R.error(req, getValidateErrorList(e)))
-//     }
-// }
+export const getBookDetail = async (req) => {
+    try {
+        const { id } = req.query
+        const data = await Book.findOne({
+            where: { id },
+            include: [{
+                model: Author,
+                as: 'author',
+                required: true
+            }]
+        })
+        return R.ok(req, { data, msg: 'REQUEST_SUCCESS' })
+    } catch (e) {
+        return R.error(req, getValidateErrorList(e))
+    }
+}
 
 BookGroup.belongsToMany(Book, {
     as: 'list',
@@ -51,11 +68,6 @@ BookGroup.belongsToMany(Book, {
         as: 'group_book',
         model: BookGroupBook
     }
-})
-Book.hasOne(Author, {
-    sourceKey: 'authorId',
-    as: 'author',
-    foreignKey: 'id'
 })
 
 // 获得用户关联书单
