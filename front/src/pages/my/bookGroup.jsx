@@ -1,4 +1,5 @@
 // import './bookGroup.css'
+// Todo: 获得我的书单，书单中有书籍list
 
 export default function MyBookGroup ({ bookGroupList = [] }) {
 
