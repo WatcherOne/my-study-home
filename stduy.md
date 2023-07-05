@@ -19,6 +19,7 @@ globalThis 提供了一个标准的方式来获取不同环境下的全局 this 
 
 标准内置对象（全局对象：不是指global对象, 而是处于全局作用域里的多个对象，全局作用域的一个变量）
 
+- 值属性
 1. undefined：表示原始值 undefined, 是原始数据类型（7种）
     A. [ 用 typeof 检查变量是否为 undefined：它不会在一个变量没有被声明的时候抛出一个错误 ]
     B. [ 技术方面看来这样的使用方法应该被避免, JavaScript 是一个静态作用域语言 ]
@@ -46,4 +47,35 @@ globalThis 提供了一个标准的方式来获取不同环境下的全局 this 
        [ arr.indexOf(NaN) // -1 ]
        [ arr.includes(NaN) // true ]
     E. [ NaN的静默转化: 指数为0的求幂  NaN ** 0 === 1, 立即返回1而不测试基数的值 ]
+
+
+- 函数属性（全局函数可以直接调用，不需要在调用时指定所属对象，执行结束后会将结果直接返回给调用者）
+1. eval(): 会将传入的字符串当做 JavaScript 代码进行执行
+    A. [ 永远不要使用eval ]
+
+2. isFinite(): 用来判断被传入的参数值是否为一个有限数值, 在必要情况下, 参数首先转为一个数值
+    A. [ 用于检测有限性（finiteness）的值 ]
+    B. [ 区别于 Number.isFinite() ]
+
+3. isNaN(): 用来确定一个值是否为NaN
+    A. [ 如果isNaN函数的参数不是Number类型, 会首先将参数转换为数值 ]
+    B. [ 使用 x!==x 更加可靠 ]
+
+4. parseInt()
+5. parseFloat()
+6. encodeURI()
+7. encodeURIComponent()
+8. decodeURI()
+9. decodeURIComponent()
+
+- 错误对象（一种特殊的基本对象。它们拥有基本的 Error 类型，同时也有多种具体的错误类型））
+1. Error: 当运行时错误产生时，Error 对象会被抛出
+    A. [ 除了通用的 Error 构造函数外，JavaScript 还有其他类型的错误构造函数 ]
+    B. [ Error构造函数，创建一个新的 Error 对象 ]
+
+2. ...
+
+- 数字和日期对象（用来表示数字、日期和执行数学计算的对象）
+1. Number: 原始基础数据类型，或 Number构造函数
+    A. [ 静态属性、静态方法、实例方法 ]
 
